@@ -1,0 +1,48 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
+gem "actionmailer"
+gem "activerecord"
+gem "activesupport", require: "active_support/all"
+gem "async-websocket" # gem "faye-websocket"
+gem "discard"
+gem "erubi"
+gem "falcon"
+gem "fast_jsonapi"
+gem "fluent-logger"
+gem "ridgepole"
+gem "sidekiq"
+gem "sinatra"
+gem "sinatra-activerecord"
+gem "sinatra-contrib"
+gem "sorbet-runtime"
+gem "sqlite3" # gem "pg" && gem "activerecord-cockroachdb-adapter"
+
+group :deveopment do
+  gem "awesome_print"
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "bullet"
+  gem "pry"
+  gem "pry-byebug"
+  gem "pry-stack_explorer"
+  gem "rack-mini-profiler"
+  gem "rubocop"
+  gem "solargraph"
+  gem "sorbet"
+end
+
+group :test do
+  gem "cucumber"
+  gem "rack-test"
+  gem "rspec"
+end
+
+group :deveopment, :test do
+  gem "annotate", require: false
+  gem "inch", require: false
+  gem "yard", require: false
+end
